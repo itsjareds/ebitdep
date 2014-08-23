@@ -1,41 +1,27 @@
-/gate/source/addSource                      cobalt gps
+/gate/source/addSource                      ebit gps
 
-/gate/source/cobalt/setActivity             7400000000000. becquerel
-
-## Simulate ion decay (more accurate, slower)
-/gate/source/cobalt/gps/particle            ion
-/gate/source/cobalt/gps/ion                 27 60 0 0
-/gate/source/cobalt/setForcedUnstableFlag   true
-/gate/source/cobalt/setForcedHalfLife      1. s
-/gate/source/cobalt/useDefaultHalfLife
-/gate/source/cobalt/gps/ene/type            Mono
-/gate/source/cobalt/gps/ene/mono            0. MeV
-/gate/source/cobalt/gps/ang/type            iso
-/gate/source/cobalt/gps/ang/mintheta        0. deg
-/gate/source/cobalt/gps/ang/maxtheta        360. deg
-/gate/source/cobalt/gps/ang/minphi          0. deg
-/gate/source/cobalt/gps/ang/maxphi          360. deg
+/gate/source/ebit/setActivity             7400000000000. becquerel
 
 ## Spawn gamma rays (less accurate, faster)
-#/gate/source/cobalt/gps/particle            gamma
-#/gate/source/cobalt/gps/energytype          Mono
-#/gate/source/cobalt/gps/monoenergy          1.25 MeV
-#/gate/source/cobalt/gps/ang/type            iso
-#/gate/source/cobalt/gps/ang/mintheta        0. deg
-#/gate/source/cobalt/gps/ang/minphi          0. deg
-#/gate/source/cobalt/gps/ang/maxphi          360. deg
+/gate/source/ebit/gps/particle            gamma
+/gate/source/ebit/gps/energytype          Mono
+/gate/source/ebit/gps/monoenergy          3.0 keV
+/gate/source/ebit/gps/ang/type            iso
+/gate/source/ebit/gps/ang/mintheta        0. deg
+/gate/source/ebit/gps/ang/minphi          0. deg
+/gate/source/ebit/gps/ang/maxphi          360. deg
 
-/gate/source/cobalt/setForcedUnstableFlag   true
-/gate/source/cobalt/setForcedHalfLife       1 ns
+/gate/source/ebit/setForcedUnstableFlag   true
+/gate/source/ebit/setForcedHalfLife       1 ns
 
-/gate/source/cobalt/attachTo                innerTube
-/gate/source/cobalt/gps/position            0 0 0 mm
+/gate/source/ebit/attachTo                innerTube
+/gate/source/ebit/gps/position            0 0 0 mm
 
-/gate/source/cobalt/gps/type                Volume
-/gate/source/cobalt/gps/shape               Cylinder
-/gate/source/cobalt/gps/radius0             0. mm
-/gate/source/cobalt/gps/radius              1.2954 mm
-/gate/source/cobalt/gps/halfz               16.4719 mm
-#/gate/source/cobalt/visualize               100 yellow 1
+/gate/source/ebit/gps/type                Volume
+/gate/source/ebit/gps/shape               Cylinder
+/gate/source/ebit/gps/radius0             0. mm
+/gate/source/ebit/gps/radius              1.2954 mm
+/gate/source/ebit/gps/halfz               16.4719 mm
+#/gate/source/ebit/visualize               100 yellow 1
 
 /gate/source/list

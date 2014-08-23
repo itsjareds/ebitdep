@@ -1,0 +1,21 @@
+/gate/source/addSource                    ebit gps
+
+## Spawn gamma rays (less accurate, faster)
+/gate/source/ebit/gps/particle            gamma
+/gate/source/ebit/gps/energytype          Mono
+/gate/source/ebit/gps/monoenergy          3.0 keV
+/gate/source/ebit/gps/ang/type            iso
+/gate/source/ebit/gps/ang/mintheta        0 deg
+/gate/source/ebit/gps/ang/maxtheta		  0 deg
+/gate/source/ebit/gps/ang/minphi          0. deg
+/gate/source/ebit/gps/ang/maxphi          360. deg
+
+/gate/source/ebit/attachTo                container
+/gate/source/ebit/gps/position            0 0 -21 mm
+
+/gate/source/ebit/gps/type                Plane
+/gate/source/ebit/gps/shape				  Circle
+/gate/source/ebit/gps/radius		      10 mm
+#/gate/source/ebit/visualize               100 yellow 1
+
+/gate/source/list

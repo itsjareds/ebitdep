@@ -26,11 +26,11 @@
 #/vis/scene/endOfEventAction         accumulate
 
 #custom
-#/vis/scene/create
-#/vis/open VRML2FILE
-#/tracking/storeTrajectory 1
-#/vis/scene/add/trajectories
-#/vis/scene/endOfEventAction accumulate
+/vis/scene/create
+/vis/open VRML2FILE
+/tracking/storeTrajectory 1
+/vis/scene/add/trajectories
+/vis/scene/endOfEventAction accumulate
 #/custom
 
 /control/execute mac/Verbose.mac
@@ -66,14 +66,6 @@
 #  ACTORS
 #=====================================================
 
-## Generate phasespace
-
-/gate/actor/addActor                        PhaseSpaceActor PhsSrc
-/gate/actor/PhsSrc/save                     output/PhaseSpace.root
-/gate/actor/PhsSrc/attachTo                 plexi
-/gate/actor/PhsSrc/storeOutgoingParticles   true
-/gate/actor/PhsSrc/useVolumeFrame           true
-
 ## Kill particles
 
 /gate/actor/addActor                        KillActor PKill
@@ -84,12 +76,6 @@
 /gate/actor/PKill/particleFilter/addParticle nu_e
 #/gate/actor/PKill/particleFilter/addParticle Ni60[2505.766]
 
-## Secondary particles
-
-/gate/actor/addActor SecondaryProductionActor SecondaryDetector
-/gate/actor/SecondaryDetector/save          output/CobaltSource.root
-/gate/actor/SecondaryDetector/attachTo      ionSource
-
 #=====================================================
 # INITIALIZATION
 #=====================================================
@@ -97,16 +83,10 @@
 /gate/run/initialize
 
 #=====================================================
-# Show how the geometry moves with time
+#  X-RAY SOURCE
 #=====================================================
 
-/control/execute mac/MoveVisu.mac
-
-#=====================================================
-#  COBALT SOURCE
-#=====================================================
-
-/control/execute mac/CobaltSource.mac
+/control/execute mac/XraySource.mac
 
 #=====================================================
 #   MEASUREMENT SETTINGS
@@ -116,6 +96,6 @@
 /gate/application/setTimeStart   0.   s
 /gate/application/setTimeStop    1.   s
 
-/gate/application/setTotalNumberOfPrimaries 1
+/gate/application/setTotalNumberOfPrimaries 100
 
 /gate/application/startDAQ
