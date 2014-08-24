@@ -3,9 +3,9 @@
 #
 
 
-/gate/world/daughters/name flask
+/gate/world/daughters/name flask_phantom
 /gate/world/daughters/insert ImageRegularParametrisedVolume
-/gate/flask/geometry/SetImage data/flask.hdr
+/gate/flask/geometry/SetImage data/flask_phantom.hdr
 /gate/flask/geometry/setRangeToMaterialFile data/range_atten_brain.dat
 
 /gate/flask/placement/setTranslation  0. 0. 0. mm

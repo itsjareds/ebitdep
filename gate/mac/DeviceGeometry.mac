@@ -57,9 +57,9 @@
 ### WATER SUBSTRATE
 /gate/flask/daughters/name                    substrate
 /gate/flask/daughters/insert                  cylinder
-/gate/substrate/placement/setTranslation      0 0 5. um
+/gate/substrate/placement/setTranslation      0 0 -18.995 mm
 /gate/substrate/geometry/setRmax              50 mm
 /gate/substrate/geometry/setRmin              0 mm
-/gate/substrate/geometry/setHeight            39.990 mm
+/gate/substrate/geometry/setHeight            2 mm
 /gate/substrate/setMaterial                   Water
 /gate/mylar/vis/setColor                      blue
