@@ -25,9 +25,9 @@
 /gate/world/daughters/name                    container
 /gate/world/daughters/insert                  cylinder
 /gate/container/placement/setTranslation      0.0 0.0 0.0 mm
-/gate/container/geometry/setRmax              .10 mm
-/gate/container/geometry/setRmin              0.0 mm
-/gate/container/geometry/setHeight            .10 mm
+/gate/container/geometry/setRmax              100000 nm
+/gate/container/geometry/setRmin              0.0 nm
+/gate/container/geometry/setHeight            100000 nm
 /gate/container/setMaterial                   Air
 #/gate/container/vis/forceWireframe
 /gate/container/vis/setColor                  yellow
@@ -37,38 +37,38 @@
 ### CELL MEMBRANE
 /gate/world/daughters/name                 cell_membrane
 /gate/world/daughters/insert               box
-/gate/cell_membrane/placement/setTranslation   0.0 0.0 0.0 mm
-/gate/cell_membrane/geometry/setXLength        .040012 mm
-/gate/cell_membrane/geometry/setYLength        .040012 mm
-/gate/cell_membrane/geometry/setZLength        .040012 mm
+/gate/cell_membrane/placement/setTranslation   0.0 0.0 0.0 nm
+/gate/cell_membrane/geometry/setXLength        40012 nm
+/gate/cell_membrane/geometry/setYLength        40012 nm
+/gate/cell_membrane/geometry/setZLength        40012 nm
 /gate/cell_membrane/setMaterial                Water
 /gate/cell_membrane/vis/setColor               blue
 
 ### CELL
 /gate/cell_membrane/daughters/name                cell_body
 /gate/cell_membrane/daughters/insert              box
-/gate/cell_body/placement/setTranslation      0.0 0.0 0.0 mm
-/gate/cell_body/geometry/setXLength           .040 mm
-/gate/cell_body/geometry/setYLength           .040 mm
-/gate/cell_body/geometry/setZLength           .040 mm
+/gate/cell_body/placement/setTranslation      0.0 0.0 0.0 nm
+/gate/cell_body/geometry/setXLength           40000 nm
+/gate/cell_body/geometry/setYLength           40000 nm
+/gate/cell_body/geometry/setZLength           40000 nm
 /gate/cell_body/setMaterial                   Water
 /gate/cell_body/vis/setColor                  red
 
 ### NUCLEAR MEMBRANE
 /gate/cell_body/daughters/name                     nuclear_membrane
 /gate/cell_body/daughters/insert                   sphere
-/gate/nuclear_membrane/placement/setTranslation    0.0 0.0 0.0 mm
-/gate/nuclear_membrane/geometry/setRmax            .00252 mm
-/gate/nuclear_membrane/geometry/setRmin            0. mm
+/gate/nuclear_membrane/placement/setTranslation    0.0 0.0 0.0 nm
+/gate/nuclear_membrane/geometry/setRmax            2520 nm
+/gate/nuclear_membrane/geometry/setRmin            0. nm
 /gate/nuclear_membrane/setMaterial                 Water
 /gate/nuclear_membrane/vis/setColor                green
 
 ### NUCLEUS
 /gate/nuclear_membrane/daughters/name              nucleus
 /gate/nuclear_membrane/daughters/insert            sphere
-/gate/nucleus/placement/setTranslation             0.0 0.0 0.0 mm
-/gate/nucleus/geometry/setRmax                     .00250 mm
-/gate/nucleus/geometry/setRmin                     0. mm
+/gate/nucleus/placement/setTranslation             0.0 0.0 0.0 nm
+/gate/nucleus/geometry/setRmax                     2500 nm
+/gate/nucleus/geometry/setRmin                     0. nm
 /gate/nucleus/setMaterial                          Water
 /gate/nucleus/vis/setColor                         blue
 
@@ -76,27 +76,27 @@
 ### NUCLEOLUS
 /gate/nucleus/daughters/name              nucleolus
 /gate/nucleus/daughters/insert            sphere
-/gate/nucleolus/placement/setTranslation             0.0 0.0 0.0 mm
-/gate/nucleolus/geometry/setRmax                     .0005 mm
-/gate/nucleolus/geometry/setRmin                     0. mm
+/gate/nucleolus/placement/setTranslation             0.0 0.0 0.0 nm
+/gate/nucleolus/geometry/setRmax                     500 nm
+/gate/nucleolus/geometry/setRmin                     0. nm
 /gate/nucleolus/setMaterial                          Water
 /gate/nucleolus/vis/setColor                         red
 
 ### RIBOSOME
 /gate/cell_body/daughters/name                ribosome
 /gate/cell_body/daughters/insert              sphere
-/gate/ribosome/placement/setTranslation       0 0 .005 mm
-/gate/ribosome/geometry/setRmax               0.000025 mm
-/gate/ribosome/geometry/setRmin               0. mm
+/gate/ribosome/placement/setTranslation       0 0 5000 nm
+/gate/ribosome/geometry/setRmax               25 nm
+/gate/ribosome/geometry/setRmin               0. nm
 /gate/ribosome/setMaterial                    Water
 /gate/ribosome/vis/setColor                   red
 
 ### GOLGI BODY
 /gate/cell_body/daughters/name                golgi_container
 /gate/cell_body/daughters/insert              sphere
-/gate/golgi_container/placement/setTranslation 0 -.005 0 mm
-/gate/golgi_container/geometry/setRmax        .0025 mm
-/gate/golgi_container/geometry/setRmin        .002458 mm
+/gate/golgi_container/placement/setTranslation 0 -5000 0 nm
+/gate/golgi_container/geometry/setRmax        2500 nm
+/gate/golgi_container/geometry/setRmin        2458 nm
 /gate/golgi_container/setMaterial             Water
 /gate/golgi_container/vis/setColor            green
 
