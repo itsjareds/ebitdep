@@ -44,6 +44,16 @@
 /gate/flask/setMaterial                       Air
 /gate/flask/vis/setColor                      white
 
+### CELL FLASK
+/gate/container/daughters/name                boxy
+/gate/container/daughters/insert              cylinder
+/gate/boxy/placement/setTranslation          0.0 0.0 0.0 mm
+/gate/boxy/geometry/setRmax                  50 mm
+/gate/boxy/geometry/setRmin                  0. mm
+/gate/boxy/geometry/setHeight                40 mm
+/gate/boxy/setMaterial                       Air
+/gate/boxy/vis/setColor                      white
+
 ### MYLAR FILM
 /gate/flask/daughters/name                    mylar
 /gate/flask/daughters/insert                  cylinder

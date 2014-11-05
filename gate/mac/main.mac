@@ -33,14 +33,15 @@
 /vis/scene/endOfEventAction accumulate
 #/custom
 
-/control/execute mac/Verbose.mac
+#/control/execute mac/Verbose.mac
 
 
 #=====================================================
 # GEOMETRY
 #=====================================================
 
-/control/execute mac/DeviceGeometry.mac
+/control/execute mac/CellGeometry.mac
+#/control/execute mac/DeviceGeometry.mac
 
 #=====================================================
 # VOXEL PHANTOM
@@ -68,29 +69,30 @@
 
 ## Dose deposition
 
-/gate/actor/addActor						DoseActor doseDep
-/gate/actor/doseDep/save					output/flask_dose.mhd
-/gate/actor/doseDep/attachTo                substrate
-/gate/actor/doseDep/stepHitType             random
-/gate/actor/doseDep/setSize                 50 50 2 mm
-/gate/actor/doseDep/setResolution           1 1 1000
-/gate/actor/doseDep/enableEdep              true
-/gate/actor/doseDep/enableUncertaintyEdep   true
-/gate/actor/doseDep/enableSquaredEdep       false
-/gate/actor/doseDep/enableDose              true
+#/gate/actor/addActor						DoseActor doseDep
+#/gate/actor/doseDep/save					output/flask_dose.mhd
+#/gate/actor/doseDep/attachTo                substrate
+#/gate/actor/doseDep/stepHitType             random
+#/gate/actor/doseDep/setSize                 50 50 2 mm
+#/gate/actor/doseDep/setResolution           1 1 1000
+#/gate/actor/doseDep/enableEdep              true
+#/gate/actor/doseDep/enableUncertaintyEdep   true
+#/gate/actor/doseDep/enableSquaredEdep       false
+#/gate/actor/doseDep/enableDose              true
 #/gate/actor/doseDep/normaliseDose           false
 
 #=====================================================
 # INITIALIZATION
 #=====================================================
 
+/gate/output/allowNoOutput
 /gate/run/initialize
 
 #=====================================================
 #  X-RAY SOURCE
 #=====================================================
 
-/control/execute mac/XraySource.mac
+#/control/execute mac/XraySource.mac
 
 #=====================================================
 #   MEASUREMENT SETTINGS
@@ -98,8 +100,8 @@
 
 /gate/application/setTimeSlice   1.   s
 /gate/application/setTimeStart   0.   s
-/gate/application/setTimeStop    1.   s
+/gate/application/setTimeStop    0.   s
 
-/gate/application/setTotalNumberOfPrimaries 100000
+#/gate/application/setTotalNumberOfPrimaries 100000
 
 /gate/application/startDAQ

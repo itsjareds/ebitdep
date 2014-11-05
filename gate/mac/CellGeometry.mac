@@ -3,9 +3,9 @@
 #
 #     W O R L D
 #
-/gate/world/geometry/setXLength       30  cm
-/gate/world/geometry/setYLength       30  cm
-/gate/world/geometry/setZLength       30  cm
+/gate/world/geometry/setXLength       .030 cm
+/gate/world/geometry/setYLength       .030  cm
+/gate/world/geometry/setZLength       .030  cm
 #/gate/world/geometry/setXLength       400. mm
 #/gate/world/geometry/setYLength       400. mm
 #/gate/world/geometry/setZLength       400. mm
@@ -25,60 +25,50 @@
 /gate/world/daughters/name                    container
 /gate/world/daughters/insert                  cylinder
 /gate/container/placement/setTranslation      0.0 0.0 0.0 mm
-/gate/container/geometry/setRmax              100 mm
+/gate/container/geometry/setRmax              .10 mm
 /gate/container/geometry/setRmin              0.0 mm
-/gate/container/geometry/setHeight            100 mm
+/gate/container/geometry/setHeight            .10 mm
 /gate/container/setMaterial                   Air
-/gate/container/vis/forceWireframe
+#/gate/container/vis/forceWireframe
 /gate/container/vis/setColor                  yellow
 /gate/container/placement/setRotationAxis     1 0 0
 /gate/container/placement/setRotationAngle    90 deg
 
 ### CELL MEMBRANE
-/gate/container/daughters/name                 cell_membrane
-/gate/container/daughters/insert               box
+/gate/world/daughters/name                 cell_membrane
+/gate/world/daughters/insert               box
 /gate/cell_membrane/placement/setTranslation   0.0 0.0 0.0 mm
-/gate/cell_membrane/geometry/setXLength        40.012 mum
-/gate/cell_membrane/geometry/setYLength        40.012 mum
-/gate/cell_membrane/geometry/setZLength        40.012 mum
+/gate/cell_membrane/geometry/setXLength        .040012 mm
+/gate/cell_membrane/geometry/setYLength        .040012 mm
+/gate/cell_membrane/geometry/setZLength        .040012 mm
 /gate/cell_membrane/setMaterial                Water
-/gate/cell_membrane/vis/setColor               green
+/gate/cell_membrane/vis/setColor               blue
 
 ### CELL
 /gate/cell_membrane/daughters/name                cell_body
 /gate/cell_membrane/daughters/insert              box
 /gate/cell_body/placement/setTranslation      0.0 0.0 0.0 mm
-/gate/cell_body/geometry/setXLength           40 mum
-/gate/cell_body/geometry/setYLength           40 mum
-/gate/cell_body/geometry/setZLength           40 mum
+/gate/cell_body/geometry/setXLength           .040 mm
+/gate/cell_body/geometry/setYLength           .040 mm
+/gate/cell_body/geometry/setZLength           .040 mm
 /gate/cell_body/setMaterial                   Water
-/gate/cell_body/vis/setColor                  white
-
-### MYLAR FILM
-/gate/container/daughters/name                mylar
-/gate/container/daughters/insert              cylinder
-/gate/mylar/placement/setTranslation          0 0 -20 mm
-/gate/mylar/geometry/setRmax                  50 mm
-/gate/mylar/geometry/setRmin                  0. mm
-/gate/mylar/geometry/setHeight                10 um
-/gate/mylar/setMaterial                       Mylar
-/gate/mylar/vis/setColor                      green
+/gate/cell_body/vis/setColor                  red
 
 ### NUCLEAR MEMBRANE
 /gate/cell_body/daughters/name                     nuclear_membrane
 /gate/cell_body/daughters/insert                   sphere
-/gate/nuclear_membrane/placement/setTranslation    0.0 0.0 0.0 mum
-/gate/nuclear_membrane/geometry/setRmax            2.52 mum
-/gate/nuclear_membrane/geometry/setRmin            0. mum
+/gate/nuclear_membrane/placement/setTranslation    0.0 0.0 0.0 mm
+/gate/nuclear_membrane/geometry/setRmax            .00252 mm
+/gate/nuclear_membrane/geometry/setRmin            0. mm
 /gate/nuclear_membrane/setMaterial                 Water
 /gate/nuclear_membrane/vis/setColor                green
 
 ### NUCLEUS
 /gate/nuclear_membrane/daughters/name              nucleus
 /gate/nuclear_membrane/daughters/insert            sphere
-/gate/nucleus/placement/setTranslation             0.0 0.0 0.0 mum
-/gate/nucleus/geometry/setRmax                     2.50 mum
-/gate/nucleus/geometry/setRmin                     0. mum
+/gate/nucleus/placement/setTranslation             0.0 0.0 0.0 mm
+/gate/nucleus/geometry/setRmax                     .00250 mm
+/gate/nucleus/geometry/setRmin                     0. mm
 /gate/nucleus/setMaterial                          Water
 /gate/nucleus/vis/setColor                         blue
 
@@ -86,17 +76,17 @@
 ### NUCLEOLUS
 /gate/nucleus/daughters/name              nucleolus
 /gate/nucleus/daughters/insert            sphere
-/gate/nucleolus/placement/setTranslation             0.0 0.0 0.0 mum
-/gate/nucleolus/geometry/setRmax                     0.5 mum
-/gate/nucleolus/geometry/setRmin                     0. mum
+/gate/nucleolus/placement/setTranslation             0.0 0.0 0.0 mm
+/gate/nucleolus/geometry/setRmax                     .0005 mm
+/gate/nucleolus/geometry/setRmin                     0. mm
 /gate/nucleolus/setMaterial                          Water
 /gate/nucleolus/vis/setColor                         red
 
 ### RIBOSOME
 /gate/cell_body/daughters/name                ribosome
 /gate/cell_body/daughters/insert              sphere
-/gate/ribosome/placement/setTranslation       0 0 0 mum
-/gate/ribosome/geometry/setRmax               0.025 mum
+/gate/ribosome/placement/setTranslation       0 0 .005 mm
+/gate/ribosome/geometry/setRmax               0.000025 mm
 /gate/ribosome/geometry/setRmin               0. mm
 /gate/ribosome/setMaterial                    Water
 /gate/ribosome/vis/setColor                   red
@@ -104,9 +94,9 @@
 ### GOLGI BODY
 /gate/cell_body/daughters/name                golgi_container
 /gate/cell_body/daughters/insert              sphere
-/gate/golgi_container/placement/setTranslation 0 0 0 mum
-/gate/golgi_container/geometry/setRmax        2.5 mum
-/gate/golgi_container/geometry/setRmin        2.458 mum
+/gate/golgi_container/placement/setTranslation 0 -.005 0 mm
+/gate/golgi_container/geometry/setRmax        .0025 mm
+/gate/golgi_container/geometry/setRmin        .002458 mm
 /gate/golgi_container/setMaterial             Water
 /gate/golgi_container/vis/setColor            green
 
