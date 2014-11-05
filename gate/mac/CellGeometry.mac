@@ -44,6 +44,11 @@
 /gate/cell_membrane/setMaterial                Water
 /gate/cell_membrane/vis/setColor               blue
 
+### CELL MEMBRANE REPEATER
+/gate/cell_membrane/repeaters/insert linear
+/gate/cell_membrane/linear/setRepeatNumber 5
+/gate/cell_membrane/linear/setRepeatVector 0. 0. 40012 nm
+
 ### CELL
 /gate/cell_membrane/daughters/name                cell_body
 /gate/cell_membrane/daughters/insert              box
@@ -85,11 +90,17 @@
 ### RIBOSOME
 /gate/cell_body/daughters/name                ribosome
 /gate/cell_body/daughters/insert              sphere
-/gate/ribosome/placement/setTranslation       0 0 5000 nm
+/gate/ribosome/placement/setTranslation       0 0 0 nm
 /gate/ribosome/geometry/setRmax               25 nm
 /gate/ribosome/geometry/setRmin               0. nm
 /gate/ribosome/setMaterial                    Water
 /gate/ribosome/vis/setColor                   red
+/gate/ribosome/repeaters/insert cubicArray
+/gate/ribosome/cubicArray/setRepeatNumberX 10
+/gate/ribosome/cubicArray/setRepeatNumberY 10
+/gate/ribosome/cubicArray/setRepeatNumberZ 10
+/gate/ribosome/cubicArray/setRepeatVector 4000 4000 4000 nm
+/gate/ribosome/cubicArray/autoCenter true
 
 ### GOLGI BODY
 /gate/cell_body/daughters/name                golgi_container
