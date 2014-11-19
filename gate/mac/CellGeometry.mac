@@ -45,9 +45,12 @@
 /gate/cell_membrane/vis/setColor                blue
 
 ### CELL MEMBRANE REPEATER
-#/gate/cell_membrane/repeaters/insert linear
-#/gate/cell_membrane/linear/setRepeatNumber 5
-#/gate/cell_membrane/linear/setRepeatVector 0. 0. 10012 nm
+/gate/cell_membrane/repeaters/insert            cubicArray
+/gate/cell_membrane/cubicArray/setRepeatNumberX 2
+/gate/cell_membrane/cubicArray/setRepeatNumberY 2
+/gate/cell_membrane/cubicArray/setRepeatNumberZ 2
+/gate/cell_membrane/cubicArray/setRepeatVector  10012 10012 10012 nm
+/gate/cell_membrane/cubicArray/autoCenter       true
 
 ### CELL
 /gate/cell_membrane/daughters/name              cell_body
