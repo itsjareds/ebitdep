@@ -22,92 +22,122 @@
 # ----------------------------
 
 # CONTAINER
-/gate/world/daughters/name                    container
-/gate/world/daughters/insert                  cylinder
-/gate/container/placement/setTranslation      0.0 0.0 0.0 mm
-/gate/container/geometry/setRmax              100000 nm
-/gate/container/geometry/setRmin              0.0 nm
-/gate/container/geometry/setHeight            100000 nm
-/gate/container/setMaterial                   Air
+/gate/world/daughters/name                      container
+/gate/world/daughters/insert                    cylinder
+/gate/container/placement/setTranslation        0.0 0.0 0.0 mm
+/gate/container/geometry/setRmax                100000 nm
+/gate/container/geometry/setRmin                0.0 nm
+/gate/container/geometry/setHeight              100000 nm
+/gate/container/setMaterial                     Air
 #/gate/container/vis/forceWireframe
-/gate/container/vis/setColor                  yellow
-/gate/container/placement/setRotationAxis     1 0 0
-/gate/container/placement/setRotationAngle    90 deg
+/gate/container/vis/setColor                    yellow
+/gate/container/placement/setRotationAxis       1 0 0
+/gate/container/placement/setRotationAngle      90 deg
 
 ### CELL MEMBRANE
-/gate/world/daughters/name                 cell_membrane
-/gate/world/daughters/insert               box
-/gate/cell_membrane/placement/setTranslation   0.0 0.0 0.0 nm
-/gate/cell_membrane/geometry/setXLength        40012 nm
-/gate/cell_membrane/geometry/setYLength        40012 nm
-/gate/cell_membrane/geometry/setZLength        40012 nm
-/gate/cell_membrane/setMaterial                Water
-/gate/cell_membrane/vis/setColor               blue
+/gate/world/daughters/name                      cell_membrane
+/gate/world/daughters/insert                    box
+/gate/cell_membrane/placement/setTranslation    0.0 0.0 0.0 nm
+/gate/cell_membrane/geometry/setXLength         10012 nm
+/gate/cell_membrane/geometry/setYLength         10012 nm
+/gate/cell_membrane/geometry/setZLength         10012 nm
+/gate/cell_membrane/setMaterial                 Water
+/gate/cell_membrane/vis/setColor                blue
 
 ### CELL MEMBRANE REPEATER
-/gate/cell_membrane/repeaters/insert linear
-/gate/cell_membrane/linear/setRepeatNumber 5
-/gate/cell_membrane/linear/setRepeatVector 0. 0. 40012 nm
+#/gate/cell_membrane/repeaters/insert linear
+#/gate/cell_membrane/linear/setRepeatNumber 5
+#/gate/cell_membrane/linear/setRepeatVector 0. 0. 10012 nm
 
 ### CELL
-/gate/cell_membrane/daughters/name                cell_body
-/gate/cell_membrane/daughters/insert              box
-/gate/cell_body/placement/setTranslation      0.0 0.0 0.0 nm
-/gate/cell_body/geometry/setXLength           40000 nm
-/gate/cell_body/geometry/setYLength           40000 nm
-/gate/cell_body/geometry/setZLength           40000 nm
-/gate/cell_body/setMaterial                   Water
-/gate/cell_body/vis/setColor                  red
+/gate/cell_membrane/daughters/name              cell_body
+/gate/cell_membrane/daughters/insert            box
+/gate/cell_body/placement/setTranslation        0.0 0.0 0.0 nm
+/gate/cell_body/geometry/setXLength             10000 nm
+/gate/cell_body/geometry/setYLength             10000 nm
+/gate/cell_body/geometry/setZLength             10000 nm
+/gate/cell_body/setMaterial                     Water
+/gate/cell_body/vis/setColor                    red
 
 ### NUCLEAR MEMBRANE
-/gate/cell_body/daughters/name                     nuclear_membrane
-/gate/cell_body/daughters/insert                   sphere
-/gate/nuclear_membrane/placement/setTranslation    0.0 0.0 0.0 nm
-/gate/nuclear_membrane/geometry/setRmax            2520 nm
-/gate/nuclear_membrane/geometry/setRmin            0. nm
-/gate/nuclear_membrane/setMaterial                 Water
-/gate/nuclear_membrane/vis/setColor                green
+/gate/cell_body/daughters/name                  nuclear_membrane
+/gate/cell_body/daughters/insert                sphere
+/gate/nuclear_membrane/placement/setTranslation 0.0 0.0 0.0 nm
+/gate/nuclear_membrane/geometry/setRmax         2520 nm
+/gate/nuclear_membrane/geometry/setRmin         0. nm
+/gate/nuclear_membrane/setMaterial              Water
+/gate/nuclear_membrane/vis/setColor             green
 
 ### NUCLEUS
-/gate/nuclear_membrane/daughters/name              nucleus
-/gate/nuclear_membrane/daughters/insert            sphere
-/gate/nucleus/placement/setTranslation             0.0 0.0 0.0 nm
-/gate/nucleus/geometry/setRmax                     2500 nm
-/gate/nucleus/geometry/setRmin                     0. nm
-/gate/nucleus/setMaterial                          Water
-/gate/nucleus/vis/setColor                         blue
+/gate/nuclear_membrane/daughters/name           nucleus
+/gate/nuclear_membrane/daughters/insert         sphere
+/gate/nucleus/placement/setTranslation          0.0 0.0 0.0 nm
+/gate/nucleus/geometry/setRmax                  2500 nm
+/gate/nucleus/geometry/setRmin                  0. nm
+/gate/nucleus/setMaterial                       Water
+/gate/nucleus/vis/setColor                      blue
 
 
 ### NUCLEOLUS
-/gate/nucleus/daughters/name              nucleolus
-/gate/nucleus/daughters/insert            sphere
-/gate/nucleolus/placement/setTranslation             0.0 0.0 0.0 nm
-/gate/nucleolus/geometry/setRmax                     500 nm
-/gate/nucleolus/geometry/setRmin                     0. nm
-/gate/nucleolus/setMaterial                          Water
-/gate/nucleolus/vis/setColor                         red
+/gate/nucleus/daughters/name                    nucleolus
+/gate/nucleus/daughters/insert                  sphere
+/gate/nucleolus/placement/setTranslation        0.0 0.0 0.0 nm
+/gate/nucleolus/geometry/setRmax                500 nm
+/gate/nucleolus/geometry/setRmin                0. nm
+/gate/nucleolus/setMaterial                     Water
+/gate/nucleolus/vis/setColor                    red
 
 ### RIBOSOME
-/gate/cell_body/daughters/name                ribosome
-/gate/cell_body/daughters/insert              sphere
-/gate/ribosome/placement/setTranslation       0 0 0 nm
-/gate/ribosome/geometry/setRmax               25 nm
-/gate/ribosome/geometry/setRmin               0. nm
-/gate/ribosome/setMaterial                    Water
-/gate/ribosome/vis/setColor                   red
-/gate/ribosome/repeaters/insert cubicArray
-/gate/ribosome/cubicArray/setRepeatNumberX 10
-/gate/ribosome/cubicArray/setRepeatNumberY 10
-/gate/ribosome/cubicArray/setRepeatNumberZ 10
-/gate/ribosome/cubicArray/setRepeatVector 4000 4000 4000 nm
-/gate/ribosome/cubicArray/autoCenter true
+/gate/cell_body/daughters/name                  ribosome
+/gate/cell_body/daughters/insert                sphere
+/gate/ribosome/placement/setTranslation         0 0 0 nm
+/gate/ribosome/geometry/setRmax                 25 nm
+/gate/ribosome/geometry/setRmin                 0. nm
+/gate/ribosome/setMaterial                      Water
+/gate/ribosome/vis/setColor                     red
+/gate/ribosome/repeaters/insert                 cubicArray
+/gate/ribosome/cubicArray/setRepeatNumberX      10
+/gate/ribosome/cubicArray/setRepeatNumberY      10
+/gate/ribosome/cubicArray/setRepeatNumberZ      10
+/gate/ribosome/cubicArray/setRepeatVector       1000 1000 1000 nm
+/gate/ribosome/cubicArray/autoCenter            true
 
 ### GOLGI BODY
-/gate/cell_body/daughters/name                golgi_container
-/gate/cell_body/daughters/insert              sphere
-/gate/golgi_container/placement/setTranslation 0 -5000 0 nm
-/gate/golgi_container/geometry/setRmax        2500 nm
-/gate/golgi_container/geometry/setRmin        2458 nm
-/gate/golgi_container/setMaterial             Water
-/gate/golgi_container/vis/setColor            green
+/gate/cell_body/daughters/name                  golgi_container
+/gate/cell_body/daughters/insert                sphere
+/gate/golgi_container/placement/setTranslation  0 0 0 nm
+/gate/golgi_container/geometry/setRmax          2600 nm
+/gate/golgi_container/geometry/setRmin          2558 nm
+/gate/golgi_container/setMaterial               Water
+/gate/golgi_container/vis/setColor              green
 
+### MITOCHONDRION
+/gate/cell_body/daughters/name                  mitochondrion
+/gate/cell_body/daughters/insert                ellipsoid
+/gate/mitochondrion/placement/setTranslation    0 3500 0 nm
+# x-length varies from 500 nm to 10000 nm
+/gate/mitochondrion/geometry/setXLength         1000 nm
+/gate/mitochondrion/geometry/setYLength         500 nm
+/gate/mitochondrion/geometry/setZLength         500 nm
+/gate/mitochondrion/setMaterial                 Water
+/gate/mitochondrion/vis/setColor                yellow
+
+### LYSOSOME
+/gate/cell_body/daughters/name                  lysosome
+/gate/cell_body/daughters/insert                sphere
+/gate/lysosome/placement/setTranslation         0 0 3200 nm
+/gate/lysosome/geometry/setRmin                 0 nm
+# radius varies from 100 nm to 1200 nm
+/gate/lysosome/geometry/setRmax                 500 nm
+/gate/lysosome/setMaterial                      Water
+/gate/lysosome/vis/setColor                     yellow
+
+### VACUOLE
+/gate/cell_body/daughters/name                  vacuole
+/gate/cell_body/daughters/insert                sphere
+/gate/vacuole/placement/setTranslation          0 0 -3600 nm
+/gate/vacuole/geometry/setRmin                  0 nm
+# radius varies from 100 nm to 1200 nm
+/gate/vacuole/geometry/setRmax                  900 nm
+/gate/vacuole/setMaterial                       Water
+/gate/vacuole/vis/setColor                      magenta
