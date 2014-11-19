@@ -41,14 +41,14 @@
 /gate/cell_membrane/geometry/setXLength         10012 nm
 /gate/cell_membrane/geometry/setYLength         10012 nm
 /gate/cell_membrane/geometry/setZLength         10012 nm
-/gate/cell_membrane/setMaterial                 Water
+/gate/cell_membrane/setMaterial                 Cell_Membrane
 /gate/cell_membrane/vis/setColor                blue
 
 ### CELL MEMBRANE REPEATER
 /gate/cell_membrane/repeaters/insert            cubicArray
-/gate/cell_membrane/cubicArray/setRepeatNumberX 2
-/gate/cell_membrane/cubicArray/setRepeatNumberY 2
-/gate/cell_membrane/cubicArray/setRepeatNumberZ 2
+/gate/cell_membrane/cubicArray/setRepeatNumberX 1
+/gate/cell_membrane/cubicArray/setRepeatNumberY 1
+/gate/cell_membrane/cubicArray/setRepeatNumberZ 1
 /gate/cell_membrane/cubicArray/setRepeatVector  10012 10012 10012 nm
 /gate/cell_membrane/cubicArray/autoCenter       true
 
@@ -59,7 +59,7 @@
 /gate/cell_body/geometry/setXLength             10000 nm
 /gate/cell_body/geometry/setYLength             10000 nm
 /gate/cell_body/geometry/setZLength             10000 nm
-/gate/cell_body/setMaterial                     Water
+/gate/cell_body/setMaterial                     Cell_Body
 /gate/cell_body/vis/setColor                    red
 
 ### NUCLEAR MEMBRANE
@@ -68,7 +68,7 @@
 /gate/nuclear_membrane/placement/setTranslation 0.0 0.0 0.0 nm
 /gate/nuclear_membrane/geometry/setRmax         2520 nm
 /gate/nuclear_membrane/geometry/setRmin         0. nm
-/gate/nuclear_membrane/setMaterial              Water
+/gate/nuclear_membrane/setMaterial              Nuclear_Membrane
 /gate/nuclear_membrane/vis/setColor             green
 
 ### NUCLEUS
@@ -77,7 +77,7 @@
 /gate/nucleus/placement/setTranslation          0.0 0.0 0.0 nm
 /gate/nucleus/geometry/setRmax                  2500 nm
 /gate/nucleus/geometry/setRmin                  0. nm
-/gate/nucleus/setMaterial                       Water
+/gate/nucleus/setMaterial                       Nucleus
 /gate/nucleus/vis/setColor                      blue
 
 
@@ -87,23 +87,42 @@
 /gate/nucleolus/placement/setTranslation        0.0 0.0 0.0 nm
 /gate/nucleolus/geometry/setRmax                500 nm
 /gate/nucleolus/geometry/setRmin                0. nm
-/gate/nucleolus/setMaterial                     Water
+/gate/nucleolus/setMaterial                     Nucleolus
 /gate/nucleolus/vis/setColor                    red
 
+### ENDOPLASMIC RETICULUM
+/gate/cell_body/daughters/name                  endo_retic
+/gate/cell_body/daughters/insert                box
+/gate/endo_retic/placement/setTranslation       3000 0 0 nm
+/gate/endo_retic/geometry/setXLength            1000 nm
+/gate/endo_retic/geometry/setYLength            1000 nm
+/gate/endo_retic/geometry/setZLength            100 nm
+/gate/endo_retic/setMaterial                    Water
+/gate/endo_retic/vis/setColor                   cyan
+
 ### RIBOSOME
-/gate/cell_body/daughters/name                  ribosome
-/gate/cell_body/daughters/insert                sphere
+/gate/endo_retic/daughters/name                 ribosome
+/gate/endo_retic/daughters/insert               sphere
 /gate/ribosome/placement/setTranslation         0 0 0 nm
 /gate/ribosome/geometry/setRmax                 25 nm
 /gate/ribosome/geometry/setRmin                 0. nm
-/gate/ribosome/setMaterial                      Water
+/gate/ribosome/setMaterial                      Ribosome
 /gate/ribosome/vis/setColor                     red
+
+### RIBOSOME REPEATER
 /gate/ribosome/repeaters/insert                 cubicArray
 /gate/ribosome/cubicArray/setRepeatNumberX      10
 /gate/ribosome/cubicArray/setRepeatNumberY      10
-/gate/ribosome/cubicArray/setRepeatNumberZ      10
-/gate/ribosome/cubicArray/setRepeatVector       1000 1000 1000 nm
+/gate/ribosome/cubicArray/setRepeatNumberZ      1
+/gate/ribosome/cubicArray/setRepeatVector       90 90 90 nm
 /gate/ribosome/cubicArray/autoCenter            true
+
+### ER REPEATER
+/gate/endo_retic/repeaters/insert               ring
+/gate/endo_retic/ring/setRepeatNumber           10
+/gate/endo_retic/ring/setPoint1                 0 0 0 nm
+/gate/endo_retic/ring/setPoint2                 0 1 1 nm
+/gate/endo_retic/ring/enableAutoRotation        true
 
 ### GOLGI BODY
 /gate/cell_body/daughters/name                  golgi_container
@@ -111,7 +130,7 @@
 /gate/golgi_container/placement/setTranslation  0 0 0 nm
 /gate/golgi_container/geometry/setRmax          2600 nm
 /gate/golgi_container/geometry/setRmin          2558 nm
-/gate/golgi_container/setMaterial               Water
+/gate/golgi_container/setMaterial               Golgi_Container
 /gate/golgi_container/vis/setColor              green
 
 ### MITOCHONDRION
@@ -122,7 +141,7 @@
 /gate/mitochondrion/geometry/setXLength         1000 nm
 /gate/mitochondrion/geometry/setYLength         500 nm
 /gate/mitochondrion/geometry/setZLength         500 nm
-/gate/mitochondrion/setMaterial                 Water
+/gate/mitochondrion/setMaterial                 Mitochondria
 /gate/mitochondrion/vis/setColor                yellow
 
 ### LYSOSOME
@@ -132,7 +151,7 @@
 /gate/lysosome/geometry/setRmin                 0 nm
 # radius varies from 100 nm to 1200 nm
 /gate/lysosome/geometry/setRmax                 500 nm
-/gate/lysosome/setMaterial                      Water
+/gate/lysosome/setMaterial                      Lysosome
 /gate/lysosome/vis/setColor                     yellow
 
 ### VACUOLE
@@ -142,5 +161,5 @@
 /gate/vacuole/geometry/setRmin                  0 nm
 # radius varies from 100 nm to 1200 nm
 /gate/vacuole/geometry/setRmax                  900 nm
-/gate/vacuole/setMaterial                       Water
+/gate/vacuole/setMaterial                       Vacuole
 /gate/vacuole/vis/setColor                      magenta
