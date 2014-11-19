@@ -489,3 +489,43 @@ Mylar:  d=1.39 g/cm3; n=3; state=Solid
         +el: name=Oxygen     ; n=2
         +el: name=Carbon     ; n=5
         +el: name=Hydrogen   ; n=4
+
+Cell_Membrane: d=1.12 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Cell_Body: d=1.00 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Nuclear_Membrane: d=1.40 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Nucleus: d=1.40 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Nucleolus: d=1.40 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Ribosome: d=1.60 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Golgi_Container: d=1.14 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Mitochondria: d=1.10 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Lysosome: d=1.10 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1
+
+Vacuole: d=1.00 g/cm3 ; n=2
+        +el: name=Hydrogen   ; n=2
+        +el: name=Oxygen     ; n=1

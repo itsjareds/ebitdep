@@ -1,0 +1,45 @@
+### 3.0 keV photon source
+
+/gate/source/addSource                    3kev gps
+
+## Spawn gamma rays (less accurate, faster)
+/gate/source/3kev/gps/particle            gamma
+/gate/source/3kev/gps/energytype          Mono
+/gate/source/3kev/gps/monoenergy          3.0 keV
+/gate/source/3kev/gps/ang/type            iso
+/gate/source/3kev/gps/ang/mintheta        0 deg
+/gate/source/3kev/gps/ang/maxtheta        0 deg
+/gate/source/3kev/gps/ang/minphi          0. deg
+/gate/source/3kev/gps/ang/maxphi          360. deg
+
+/gate/source/3kev/attachTo                container
+/gate/source/3kev/gps/position            0 0 -21 mm
+
+/gate/source/3kev/gps/type                Plane
+/gate/source/3kev/gps/shape               Circle
+/gate/source/3kev/gps/radius              10 mm
+#/gate/source/3kev/visualize               100 yellow 1
+
+### 3.5 keV photon source
+
+/gate/source/addSource                    3_5kev gps
+
+## Spawn gamma rays (less accurate, faster)
+/gate/source/3_5kev/gps/particle          gamma
+/gate/source/3_5kev/gps/energytype        Mono
+/gate/source/3_5kev/gps/monoenergy        3.5 keV
+/gate/source/3_5kev/gps/ang/type          iso
+/gate/source/3_5kev/gps/ang/mintheta      0 deg
+/gate/source/3_5kev/gps/ang/maxtheta      0 deg
+/gate/source/3_5kev/gps/ang/minphi        0. deg
+/gate/source/3_5kev/gps/ang/maxphi        360. deg
+
+/gate/source/3_5kev/attachTo              container
+/gate/source/3_5kev/gps/position          0 0 -21 mm
+
+/gate/source/3_5kev/gps/type              Plane
+/gate/source/3_5kev/gps/shape             Circle
+/gate/source/3_5kev/gps/radius            10 mm
+#/gate/source/3_5kev/visualize             100 yellow 1
+
+/gate/source/list
